@@ -3,9 +3,11 @@
 int main(){
     char codigo[50], codigo2[50], nome[50], nome2[50];
     char estado, estado2;
-    int populacao, populacao2, turismo, turismo2;
+    int turismo, turismo2;
+    unsigned long int populacao, populacao2;
     float area, area2, pib, pib2;
     float densidade, densidade2, pibcapta, pibcapta2;
+    float superpoder1, superpoder2;
 
     printf("\nCarta 1\n");
     
@@ -19,7 +21,7 @@ int main(){
         scanf("%s", nome);
         
     printf("População: \n");
-        scanf("%d", &populacao);
+        scanf("%lu", &populacao);
            
     printf("Pontos de turismo: \n");
         scanf("%d", &turismo);
@@ -43,7 +45,7 @@ int main(){
         scanf("%s", nome2);
             
     printf("População: \n");
-        scanf("%d", &populacao2);
+        scanf("%lu", &populacao2);
                
     printf("Pontos de turismo: \n");
         scanf("%d", &turismo2);
@@ -59,6 +61,9 @@ int main(){
     
         densidade = populacao / area;
         densidade2 = populacao2 / area2;
+
+        superpoder1 = populacao + area + pib + turismo + pibcapta;
+        superpoder2 = populacao2 + area2 + pib2 + turismo2 + pibcapta2;
     
     printf("---------------\n");
 
@@ -66,12 +71,13 @@ int main(){
     printf("Codigo: %s\n", codigo);
     printf("Estado: %c\n", estado);
     printf("Cidade: %s\n", nome);
-    printf("População: %d\n", populacao);
+    printf("População: %lu\n", populacao);
     printf("Pontos de turismo: %d\n", turismo);
     printf("Área: %.0f km²\n", area);
     printf("Pib: %.0f bilhões de reais\n", pib);
     printf("A densidade populacional é de: %.0f hab/km²\n", densidade);
     printf("O pib per capta é: R$%.2f\n", pibcapta);
+    printf("O super poder é: %.0f\n", superpoder1);
 
     printf("---------------\n");
 
@@ -79,12 +85,23 @@ int main(){
     printf("Codigo: %s\n", codigo2);
     printf("Estado: %c\n", estado2);
     printf("Cidade: %s\n", nome2);
-    printf("População: %d\n", populacao2);
+    printf("População: %lu\n", populacao2);
     printf("Pontos de turismo: %d\n", turismo2);
     printf("Área: %.0f km²\n", area2);
     printf("Pib: %.0f bilhões de reais\n", pib2);
     printf("A densidade populacional é de: %0.f hab/km²\n", densidade2);
     printf("O pib per capta é: R$%.2f\n", pibcapta2); 
+    printf("O super poder é: %.0f\n", superpoder2);
+
+    printf("---------------\n");
+    printf("\nComparação de cartas\n");
+    printf("População: a carta %d venceu\n", populacao > populacao2);
+    printf("turismo: a carta %d venceu\n", turismo > turismo2);
+    printf("area: a carta %d venceu\n", area > area2);
+    printf("pib: a carta %d venceu\n", pib > pib2);
+    printf("densidade: a carta %d venceu\n", densidade > densidade2);
+    printf("pib per capta: a carta %d venceu\n", pibcapta > pibcapta2);
+    printf("super poder: a carta %d venceu\n", superpoder1 > superpoder2);
 
     return 0;
 
